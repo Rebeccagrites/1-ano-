@@ -1,3 +1,4 @@
+<script>
 const defaultConfig = {
   site_title: 'Meu Ano Musical',
   site_subtitle: 'Uma jornada através das estações em melodias',
@@ -18,7 +19,6 @@ async function onConfigChange(config) {
   document.getElementById('song-link').href =
     config.song_link || defaultConfig.song_link;
 }
-
 function mapToCapabilities() {
   return {
     recolorables: [],
@@ -27,7 +27,6 @@ function mapToCapabilities() {
     fontSizeable: undefined
   };
 }
-
 function mapToEditPanelValues(config) {
   return new Map([
     ['site_title', config.site_title || defaultConfig.site_title],
@@ -36,7 +35,6 @@ function mapToEditPanelValues(config) {
     ['song_link', config.song_link || defaultConfig.song_link]
   ]);
 }
-
 if (window.elementSdk) {
   window.elementSdk.init({
     defaultConfig,
@@ -45,4 +43,4 @@ if (window.elementSdk) {
     mapToEditPanelValues
   });
 }
-
+</script>
