@@ -1,4 +1,30 @@
 <script>
+  const cards = document.querySelectorAll('.month-interactive');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const isActive = card.classList.contains('active');
+
+      // Reset geral
+      cards.forEach(c => {
+        c.classList.remove('active', 'dimmed');
+        const content = c.querySelector('.month-content');
+        if (content) content.classList.add('hidden');
+      });
+
+      // Ativa o clicado
+      if (!isActive) {
+        card.classList.add('active');
+        card.querySelector('.month-content').classList.remove('hidden');
+
+        cards.forEach(c => {
+          if (c !== card) c.classList.add('dimmed');
+        });
+      }
+    });
+  });
+</script>
+<script>
 const defaultConfig = {
   site_title: 'Meu Ano Musical',
   site_subtitle: 'Uma jornada através das estações em melodias',
