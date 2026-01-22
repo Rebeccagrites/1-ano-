@@ -1,148 +1,238 @@
-<!-- Months Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Ano Musical</title>
 
-  <!-- Janeiro -->
-  <section class="month-card month-interactive bg-gradient-to-br from-purple-900/60 to-violet-800/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-400/20 cursor-pointer">
-    <header class="flex items-center gap-3 mb-4">
-      <span class="text-3xl">🎵</span>
-      <h3 class="text-2xl font-semibold text-white">Janeiro</h3>
-    </header>
-    <p class="month-content hidden text-purple-200 text-sm leading-relaxed">
-      Janeiro nasce em silêncio e expectativa. As músicas são leves, cheias de esperança,
-      como o primeiro acorde de uma nova canção. É o mês dos recomeços.
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #2e1065, #0f172a);
+    }
+
+    .month-interactive {
+      transition: all 0.4s ease;
+    }
+
+    .month-interactive:hover {
+      transform: translateY(-6px);
+    }
+
+    .month-interactive.active {
+      transform: scale(1.06);
+      box-shadow: 0 30px 60px -15px rgba(168, 85, 247, 0.7);
+      z-index: 10;
+    }
+
+    .month-interactive.active .month-content {
+      display: block;
+      animation: reveal 0.4s ease forwards;
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .month-interactive.dimmed {
+      opacity: 0.35;
+      filter: blur(1px);
+    }
+  </style>
+</head>
+
+<body class="text-white min-h-screen">
+
+  <!-- HEADER -->
+  <header class="text-center py-16 px-6">
+    <h1 id="site-title" class="text-4xl md:text-5xl font-[Playfair Display] mb-4">
+      Meu Ano Musical
+    </h1>
+    <p id="site-subtitle" class="text-purple-200 max-w-2xl mx-auto">
+      Uma jornada através das estações em melodias
     </p>
-  </section>
+  </header>
 
-  <!-- Fevereiro -->
-  <section class="month-card month-interactive bg-gradient-to-br from-fuchsia-900/60 to-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-fuchsia-400/20 cursor-pointer">
-    <header class="flex items-center gap-3 mb-4">
-      <span class="text-3xl">🎶</span>
-      <h3 class="text-2xl font-semibold text-white">Fevereiro</h3>
-    </header>
-    <p class="month-content hidden text-fuchsia-200 text-sm leading-relaxed">
-      Fevereiro pulsa no ritmo do coração. Amor, carnaval e intensidade tomam conta
-      das canções. É um mês feito para dançar.
-    </p>
-  </section>
+  <!-- MAIN -->
+  <main class="max-w-7xl mx-auto px-6">
 
-  <!-- Março -->
-  <section class="month-card month-interactive bg-gradient-to-br from-violet-900/60 to-indigo-800/40 backdrop-blur-sm rounded-2xl p-6 border border-violet-400/20 cursor-pointer">
-    <header class="flex items-center gap-3 mb-4">
-      <span class="text-3xl">🎼</span>
-      <h3 class="text-2xl font-semibold text-white">Março</h3>
-    </header>
-    <p class="month-content hidden text-violet-200 text-sm leading-relaxed">
-      Março é transição. As músicas misturam nostalgia e movimento,
-      como águas que seguem seu curso rumo ao novo.
-    </p>
-  </section>
+    <!-- Months Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-24">
 
-  <!-- Abril -->
-  <section class="month-card month-interactive bg-gradient-to-br from-purple-900/60 to-pink-800/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-400/20 cursor-pointer">
-    <header class="flex items-center gap-3 mb-4">
-      <span class="text-3xl">🌸🎵</span>
-      <h3 class="text-2xl font-semibold text-white">Abril</h3>
-    </header>
-    <p class="month-content hidden text-pink-200 text-sm leading-relaxed">
-      Abril floresce em melodias suaves. Cada canção parece uma pétala,
-      delicada e cheia de poesia sonora.
-    </p>
-  </section>
+      <!-- Janeiro -->
+      <section class="month-card month-interactive bg-gradient-to-br from-purple-900/60 to-violet-800/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-400/20 cursor-pointer">
+        <header class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🎵</span>
+          <h3 class="text-2xl font-semibold font-[Playfair Display]">Janeiro</h3>
+        </header>
+        <p class="month-content hidden text-purple-200 text-sm leading-relaxed">
+          Janeiro nasce em silêncio e expectativa. As músicas são leves, cheias de esperança.
+        </p>
+      </section>
 
-  <!-- Maio -->
-  <section class="month-card month-interactive bg-gradient-to-br from-indigo-900/60 to-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-indigo-400/20 cursor-pointer">
-    <header class="flex items-center gap-3 mb-4">
-      <span class="text-3xl">🎧</span>
-      <h3 class="text-2xl font-semibold text-white">Maio</h3>
-    </header>
-    <p class="month-content hidden text-indigo-200 text-sm leading-relaxed">
-      Maio soa como cuidado e afeto. Canções profundas, harmonias quentes
-      e músicas para ouvir com calma.
-    </p>
-  </section>
+      <!-- Fevereiro -->
+      <section class="month-card month-interactive bg-gradient-to-br from-fuchsia-900/60 to-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-fuchsia-400/20 cursor-pointer">
+        <header class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🎶</span>
+          <h3 class="text-2xl font-semibold font-[Playfair Display]">Fevereiro</h3>
+        </header>
+        <p class="month-content hidden text-fuchsia-200 text-sm leading-relaxed">
+          Amor, carnaval e intensidade. Fevereiro pede música que faz dançar.
+        </p>
+      </section>
 
-  <!-- Junho -->
-  <section class="month-card month-interactive bg-gradient-to-br from-purple-900/60 to-amber-800/30 backdrop-blur-sm rounded-2xl p-6 border border-amber-400/20 cursor-pointer">
-    <header class="flex items-center gap-3 mb-4">
-      <span class="text-3xl">🪗🎶</span>
-      <h3 class="text-2xl font-semibold text-white">Junho</h3>
-    </header>
-    <p class="month-content hidden text-amber-200 text-sm leading-relaxed">
-      Junho é festa, fogueira e tradição. Forró, sanfona e ritmos que
-      aquecem as noites frias.
-    </p>
-  </section>
+      <!-- Março -->
+      <section class="month-card month-interactive bg-gradient-to-br from-violet-900/60 to-indigo-800/40 backdrop-blur-sm rounded-2xl p-6 border border-violet-400/20 cursor-pointer">
+        <header class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🎼</span>
+          <h3 class="text-2xl font-semibold font-[Playfair Display]">Março</h3>
+        </header>
+        <p class="month-content hidden text-violet-200 text-sm leading-relaxed">
+          Março mistura nostalgia e movimento, abrindo novos caminhos sonoros.
+        </p>
+      </section>
 
-  <!-- Julho -->
-  <section class="month-card month-interactive bg-gradient-to-br from-cyan-900/60 to-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-cyan-400/20 cursor-pointer">
-    <header class="flex items-center gap-3 mb-4">
-      <span class="text-3xl">❄️🎼</span>
-      <h3 class="text-2xl font-semibold text-white">Julho</h3>
-    </header>
-    <p class="month-content hidden text-cyan-200 text-sm leading-relaxed">
-      Julho pede introspecção. Trilhas instrumentais, músicas densas
-      e pensamentos longos acompanhados por som.
-    </p>
-  </section>
+      <!-- Abril -->
+      <section class="month-card month-interactive bg-gradient-to-br from-purple-900/60 to-pink-800/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-400/20 cursor-pointer">
+        <header class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🌸🎵</span>
+          <h3 class="text-2xl font-semibold font-[Playfair Display]">Abril</h3>
+        </header>
+        <p class="month-content hidden text-pink-200 text-sm leading-relaxed">
+          Abril floresce em melodias suaves e cheias de poesia.
+        </p>
+      </section>
 
-  <!-- Agosto -->
-  <section class="month-card month-interactive bg-gradient-to-br from-slate-900/60 to-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-slate-400/20 cursor-pointer">
-    <header class="flex items-center gap-3 mb-4">
-      <span class="text-3xl">🎸</span>
-      <h3 class="text-2xl font-semibold text-white">Agosto</h3>
-    </header>
-    <p class="month-content hidden text-slate-200 text-sm leading-relaxed">
-      Agosto traz força e atitude. Guitarras, batidas firmes
-      e músicas que empurram pra frente.
-    </p>
-  </section>
+      <!-- Maio -->
+      <section class="month-card month-interactive bg-gradient-to-br from-indigo-900/60 to-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-indigo-400/20 cursor-pointer">
+        <header class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🎧</span>
+          <h3 class="text-2xl font-semibold font-[Playfair Display]">Maio</h3>
+        </header>
+        <p class="month-content hidden text-indigo-200 text-sm leading-relaxed">
+          Maio é afeto, cuidado e músicas para ouvir com calma.
+        </p>
+      </section>
 
-  <!-- Setembro -->
-  <section class="month-card month-interactive bg-gradient-to-br from-green-900/60 to-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-green-400/20 cursor-pointer">
-    <header class="flex items-center gap-3 mb-4">
-      <span class="text-3xl">🌱🎶</span>
-      <h3 class="text-2xl font-semibold text-white">Setembro</h3>
-    </header>
-    <p class="month-content hidden text-green-200 text-sm leading-relaxed">
-      Setembro renasce em som. Playlists frescas,
-      novos artistas e vibração de primavera.
-    </p>
-  </section>
+      <!-- Junho -->
+      <section class="month-card month-interactive bg-gradient-to-br from-purple-900/60 to-amber-800/30 backdrop-blur-sm rounded-2xl p-6 border border-amber-400/20 cursor-pointer">
+        <header class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🪗🎶</span>
+          <h3 class="text-2xl font-semibold font-[Playfair Display]">Junho</h3>
+        </header>
+        <p class="month-content hidden text-amber-200 text-sm leading-relaxed">
+          Junho é festa, tradição e música que aquece o coração.
+        </p>
+      </section>
 
-  <!-- Outubro -->
-  <section class="month-card month-interactive bg-gradient-to-br from-orange-900/60 to-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-orange-400/20 cursor-pointer">
-    <header class="flex items-center gap-3 mb-4">
-      <span class="text-3xl">🎈🎵</span>
-      <h3 class="text-2xl font-semibold text-white">Outubro</h3>
-    </header>
-    <p class="month-content hidden text-orange-200 text-sm leading-relaxed">
-      Outubro é leve e divertido. Canções que lembram infância,
-      alegria e liberdade.
-    </p>
-  </section>
+      <!-- Julho -->
+      <section class="month-card month-interactive bg-gradient-to-br from-cyan-900/60 to-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-cyan-400/20 cursor-pointer">
+        <header class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">❄️🎼</span>
+          <h3 class="text-2xl font-semibold font-[Playfair Display]">Julho</h3>
+        </header>
+        <p class="month-content hidden text-cyan-200 text-sm leading-relaxed">
+          Julho pede introspecção e trilhas que acompanham pensamentos longos.
+        </p>
+      </section>
 
-  <!-- Novembro -->
-  <section class="month-card month-interactive bg-gradient-to-br from-rose-900/60 to-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-rose-400/20 cursor-pointer">
-    <header class="flex items-center gap-3 mb-4">
-      <span class="text-3xl">🎤</span>
-      <h3 class="text-2xl font-semibold text-white">Novembro</h3>
-    </header>
-    <p class="month-content hidden text-rose-200 text-sm leading-relaxed">
-      Novembro é voz, história e consciência.
-      Letras fortes ecoam com significado.
-    </p>
-  </section>
+      <!-- Agosto -->
+      <section class="month-card month-interactive bg-gradient-to-br from-slate-900/60 to-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-slate-400/20 cursor-pointer">
+        <header class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🎸</span>
+          <h3 class="text-2xl font-semibold font-[Playfair Display]">Agosto</h3>
+        </header>
+        <p class="month-content hidden text-slate-200 text-sm leading-relaxed">
+          Agosto traz força, atitude e músicas cheias de energia.
+        </p>
+      </section>
 
-  <!-- Dezembro -->
-  <section class="month-card month-interactive bg-gradient-to-br from-red-900/60 to-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-red-400/20 cursor-pointer">
-    <header class="flex items-center gap-3 mb-4">
-      <span class="text-3xl">⭐🎶</span>
-      <h3 class="text-2xl font-semibold text-white">Dezembro</h3>
-    </header>
-    <p class="month-content hidden text-red-200 text-sm leading-relaxed">
-      Dezembro encerra o ano em harmonia. Canções natalinas,
-      memórias e emoção para fechar o ciclo.
-    </p>
-  </section>
+      <!-- Setembro -->
+      <section class="month-card month-interactive bg-gradient-to-br from-green-900/60 to-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-green-400/20 cursor-pointer">
+        <header class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🌱🎶</span>
+          <h3 class="text-2xl font-semibold font-[Playfair Display]">Setembro</h3>
+        </header>
+        <p class="month-content hidden text-green-200 text-sm leading-relaxed">
+          Setembro traz frescor, novos artistas e clima de primavera.
+        </p>
+      </section>
 
-</div>
+      <!-- Outubro -->
+      <section class="month-card month-interactive bg-gradient-to-br from-orange-900/60 to-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-orange-400/20 cursor-pointer">
+        <header class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🎈🎵</span>
+          <h3 class="text-2xl font-semibold font-[Playfair Display]">Outubro</h3>
+        </header>
+        <p class="month-content hidden text-orange-200 text-sm leading-relaxed">
+          Outubro é leve, divertido e cheio de nostalgia alegre.
+        </p>
+      </section>
+
+      <!-- Novembro -->
+      <section class="month-card month-interactive bg-gradient-to-br from-rose-900/60 to-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-rose-400/20 cursor-pointer">
+        <header class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🎤</span>
+          <h3 class="text-2xl font-semibold font-[Playfair Display]">Novembro</h3>
+        </header>
+        <p class="month-content hidden text-rose-200 text-sm leading-relaxed">
+          Novembro é reflexão, identidade e músicas com mensagem.
+        </p>
+      </section>
+
+      <!-- Dezembro -->
+      <section class="month-card month-interactive bg-gradient-to-br from-red-900/60 to-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-red-400/20 cursor-pointer">
+        <header class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">⭐🎶</span>
+          <h3 class="text-2xl font-semibold font-[Playfair Display]">Dezembro</h3>
+        </header>
+        <p class="month-content hidden text-red-200 text-sm leading-relaxed">
+          Dezembro fecha o ano com emoção, memória e esperança.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script>
+    const cards = document.querySelectorAll('.month-interactive');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const isActive = card.classList.contains('active');
+
+        cards.forEach(c => {
+          c.classList.remove('active', 'dimmed');
+          const content = c.querySelector('.month-content');
+          if (content) content.classList.add('hidden');
+        });
+
+        if (!isActive) {
+          card.classList.add('active');
+          card.querySelector('.month-content').classList.remove('hidden');
+
+          cards.forEach(c => {
+            if (c !== card) c.classList.add('dimmed');
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
